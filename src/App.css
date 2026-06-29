@@ -1,0 +1,1095 @@
+/* App.css (File ke top par paste karo) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+}
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: 0.3s;
+  margin: 0;
+}
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+
+  &:hover {
+    border-color: var(--accent-border);
+  }
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+.hero {
+  position: relative;
+
+  .base,
+  .framework,
+  .vite {
+    inset-inline: 0;
+    margin: 0 auto;
+  }
+
+  .base {
+    width: 170px;
+    position: relative;
+    z-index: 0;
+  }
+
+  .framework,
+  .vite {
+    position: absolute;
+  }
+
+  .framework {
+    z-index: 1;
+    top: 34px;
+    height: 28px;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
+      scale(1.4);
+  }
+
+  .vite {
+    z-index: 0;
+    top: 107px;
+    height: 26px;
+    width: auto;
+    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
+      scale(0.8);
+  }
+}
+
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
+
+#next-steps {
+  display: flex;
+  border-top: 1px solid var(--border);
+  text-align: left;
+
+  & > div {
+    flex: 1 1 0;
+    padding: 32px;
+    @media (max-width: 1024px) {
+      padding: 24px 20px;
+    }
+  }
+
+  .icon {
+    margin-bottom: 16px;
+    width: 22px;
+    height: 22px;
+  }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+#docs {
+  border-right: 1px solid var(--border);
+
+  @media (max-width: 1024px) {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+}
+
+#next-steps ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  margin: 32px 0 0;
+
+  .logo {
+    height: 18px;
+  }
+
+  a {
+    color: var(--text-h);
+    font-size: 16px;
+    border-radius: 6px;
+    background: var(--social-bg);
+    display: flex;
+    padding: 6px 12px;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: var(--shadow);
+    }
+    .button-icon {
+      height: 18px;
+      width: 18px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    li {
+      flex: 1 1 calc(50% - 8px);
+    }
+
+    a {
+      width: 100%;
+      justify-content: center;
+      box-sizing: border-box;
+    }
+  }
+}
+
+#spacer {
+  height: 88px;
+  border-top: 1px solid var(--border);
+  @media (max-width: 1024px) {
+    height: 48px;
+  }
+}
+
+.ticks {
+  position: relative;
+  width: 100%;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    top: -4.5px;
+    border: 5px solid transparent;
+  }
+
+  &::before {
+    left: 0;
+    border-left-color: var(--border);
+  }
+  &::after {
+    right: 0;
+    border-right-color: var(--border);
+  }
+}
+/* Card ko modern aur interactive banane ke liye */
+.product-card {
+  border: 1px solid #333;
+  border-radius: 12px; /* Corners ko thoda round karna professional lagta hai */
+  background-color: #1e1e1e; /* Thoda dark premium gray */
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+/* Jab mouse card ke upar aaye (Hover effect) */
+.product-card:hover {
+  transform: translateY(-8px); /* Card thoda upar uthega */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6); /* Ek 3D depth aayegi */
+  border-color: #555;
+}
+
+/* View Details Button ko Highlight karne ke liye */
+.view-btn {
+  background-color: #ffd700; /* Navbar ke "Cart" se match karta hua Yellow/Gold */
+  color: #111;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.view-btn:hover {
+  background-color: #e6c200;
+  transform: scale(1.05); /* Button thoda bada hoga hover par */
+}
+
+/* Price text styling */
+.product-price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4ade80; /* Light green color price ke liye professional lagta hai */
+  margin: 10px 0;
+}
+/* 1. Default Mode (Light Mode) - Yeh pehle missing tha */
+body {
+  background-color: #ffffff !important; /* Safed background */
+  color: #121212 !important; /* Kaale akshar */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 2. Dark Mode (Jab button on ho) */
+body.dark-mode {
+  background-color: #121212 !important; /* Dark background */
+  color: #ffffff !important; /* Safed akshar */
+}
+
+/* 3. Shop Inventory heading ka color Light mode mein black karne ke liye */
+body h1, body h2, body h3 {
+  color: inherit;
+}
+/* =========================================
+   Modern Animated Theme Toggle Switch
+   ========================================= */
+.theme-toggle {
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  box-sizing: border-box;
+  margin-left: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Day Mode Background (Sky Blue) */
+.theme-toggle.light {
+  background-color: #87ceeb; 
+}
+
+/* Night Mode Background (Dark Grey) */
+.theme-toggle.dark {
+  background-color: #333333; 
+}
+
+/* The Sliding Circle */
+.toggle-circle {
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px; /* Emoji size */
+  transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1); /* Smooth sliding */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+/* Slide Right for Dark Mode */
+.theme-toggle.dark .toggle-circle {
+  transform: translateX(30px);
+}
+
+/* Slide Left for Light Mode */
+.theme-toggle.light .toggle-circle {
+  transform: translateX(0px);
+}
+/* Fix for overlapping heading text */
+h1, h2, h3 {
+  line-height: 1.4 !important;
+  margin-bottom: 15px;
+}
+/* =========================================
+   ShopZone Premium Layout (Grid & Sidebar)
+   ========================================= */
+
+.shop-container {
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.shop-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shop-layout {
+  display: grid;
+  grid-template-columns: 250px 1fr; /* 250px Sidebar, baaki space products ke liye */
+  gap: 30px;
+}
+
+/* Sidebar Styling */
+.shop-sidebar {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 12px;
+  height: fit-content;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.filter-group {
+  margin-bottom: 30px;
+}
+
+.filter-group h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  color: #a855f7; /* Theme Purple Color */
+}
+
+.filter-group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.filter-group li {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #ccc;
+}
+
+.filter-group input[type="checkbox"] {
+  accent-color: #a855f7;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.price-slider {
+  width: 100%;
+  accent-color: #a855f7;
+}
+
+/* Products Grid Layout */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+/* New Purple Button */
+.btn-purple {
+  background-color: #8b5cf6;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1; /* Button ko poori space lene dega */
+  transition: background-color 0.2s ease;
+}
+
+.btn-purple:hover {
+  background-color: #7c3aed; /* Hover par thoda dark purple */
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Light Mode Adjustments */
+body:not(.dark-mode) .shop-sidebar {
+  background-color: #f9f9f9;
+  border: 1px solid #eaeaea;
+}
+
+body:not(.dark-mode) .filter-group li {
+  color: #444;
+}
+
+body:not(.dark-mode) .shop-header {
+  border-bottom: 1px solid #eaeaea;
+}
+/* =========================================
+   Product Card & Image Size Fixes
+   ========================================= */
+
+/* Card ko proper shape dena */
+.products-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border-radius: 12px;
+  background-color: #1e1e1e; /* Dark mode ka background */
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Image ko box ke bahar jaane se rokna */
+.products-grid .product-card img {
+  width: 100%;
+  height: 180px; /* Ek fixed height */
+  object-fit: contain; /* Image bina kate box mein fit ho jayegi */
+  background-color: #ffffff; /* Transparent images sahi dikhein */
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* Title ka color aur lambai theek karna */
+.products-grid .product-card h4 {
+  color: #ffffff; 
+  font-size: 15px;
+  margin: 0 0 10px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* Lambe text ke aage ... lag jayega */
+}
+
+/* Price ko thoda stylish purple karna */
+.products-grid .product-card .price {
+  font-size: 18px;
+  font-weight: bold;
+  color: #a855f7;
+  margin-bottom: 15px;
+}
+
+/* Light Mode mein cards ko white karna taaki text dikhe */
+body:not(.dark-mode) .products-grid .product-card {
+  background-color: #ffffff;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Halka sa shadow */
+}
+
+body:not(.dark-mode) .products-grid .product-card h4 {
+  color: #333333; /* Light mode mein dark text */
+}
+/* =========================================
+   Force Grid Layout for Products (Side-by-Side)
+   ========================================= */
+.products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)) !important;
+  gap: 25px !important;
+  align-items: start !important;
+  width: 100%;
+}
+/* 1. Shop container ko full width dene ke liye */
+.shop-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex; /* Sidebar aur Grid ko sidha line mein laane ke liye */
+  flex-direction: column;
+}
+
+/* 2. Layout ko zor se side-by-side karne ke liye */
+.shop-layout {
+  display: grid !important;
+  grid-template-columns: 250px 1fr !important; /* Sidebar 250px, baki jagah Grid */
+  gap: 30px !important;
+  align-items: start !important;
+}
+/* =========================================
+   Hover Effects & Reset Button Styling
+   ========================================= */
+
+/* Cards ke liye smooth animation transition */
+.products-grid .product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+/* Dark Mode Hover Effect (Purple Glow) */
+.products-grid .product-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.15) !important;
+  border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+/* Light Mode Hover Effect (Standard Shadow) */
+body:not(.dark-mode) .products-grid .product-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  border-color: #d1d5db !important;
+}
+
+/* Reset Button Styling */
+.btn-reset {
+  width: 100%;
+  background-color: transparent;
+  color: #a855f7;
+  border: 1px solid #a855f7;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 25px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-reset:hover {
+  background-color: rgba(168, 85, 247, 0.1);
+}
+
+body:not(.dark-mode) .btn-reset {
+  color: #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+body:not(.dark-mode) .btn-reset:hover {
+  background-color: rgba(139, 92, 246, 0.1);
+}
+/* =========================================
+   Home Page / Hero Section Styling (UPDATED)
+   ========================================= */
+
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 75vh;
+  padding: 20px;
+}
+
+/* 1 & 2: Purple Glow, Border, aur 60px Padding */
+.hero-section {
+  text-align: center;
+  max-width: 750px;
+  padding: 60px; /* Naya padding card ko bada dikhane ke liye */
+  background-color: #1e1e1e;
+  border-radius: 16px;
+  border: 1px solid rgba(138, 92, 246, 0.3); /* Purple border */
+  box-shadow: 0 0 30px rgba(138, 92, 246, 0.12); /* Purple glow */
+  transition: transform 0.3s ease;
+}
+
+.hero-section:hover {
+  transform: translateY(-5px);
+}
+
+.hero-title {
+  font-size: 46px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* 3: Buttons with equal height, transition, and hover */
+.hero-btn {
+  padding: 14px 32px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s; /* Smooth transition */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px); /* Floating effect */
+}
+
+/* Light Mode Adjustments */
+body:not(.dark-mode) .hero-section {
+  background-color: #ffffff;
+  border: 1px solid rgba(138, 92, 246, 0.4); 
+  box-shadow: 0 0 30px rgba(138, 92, 246, 0.15);
+}
+
+body:not(.dark-mode) .hero-title {
+  color: #111111;
+}
+
+body:not(.dark-mode) .hero-subtitle {
+  color: #555555;
+}
+/* =========================================
+   COMPLETE CONTACT PAGE STYLING (FIXED)
+   ========================================= */
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.contact-header h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.contact-content {
+  display: grid !important;
+  grid-template-columns: 3fr 2fr !important; /* Left mein Form, Right mein Info */
+  gap: 50px !important;
+  align-items: start;
+}
+
+/* --- Form Styling --- */
+.contact-form-section {
+  width: 100%;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.form-group {
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  padding: 16px;
+  background-color: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box; /* Input ko container ke bahar jane se rokta hai */
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid #8b5cf6 !important;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.35) !important;
+  background-color: #252525;
+}
+
+.input-error {
+  border: 1px solid #ef4444 !important; 
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 5px;
+  display: block;
+  text-align: left;
+}
+
+/* Success Message */
+.success-message {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border: 1px solid #22c55e;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Submit Button */
+.submit-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  padding: 16px;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02); 
+  box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3); 
+}
+
+/* --- Info Card (Right Side) --- */
+.info-card {
+  background-color: #1e1e1e;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid rgba(138, 92, 246, 0.3);
+  box-shadow: 0 0 30px rgba(138, 92, 246, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: left; /* Center alignment hata diya */
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+/* Fix for the "UFO" stretched icons */
+.info-icon {
+  font-size: 28px; 
+  min-width: 55px; /* Box ki strict width */
+  height: 55px;    /* Box ki strict height */
+  background-color: rgba(168, 85, 247, 0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(139, 92, 246, 0.25); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Icon ko chhota/stetch hone se rokega */
+  transition: transform 0.3s ease;
+}
+
+.info-item:hover .info-icon {
+  transform: scale(1.1); 
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+.info-item h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+  color: #a855f7;
+}
+
+.info-item p {
+  margin: 0;
+  color: #cccccc;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* --- Light Mode Fixes --- */
+body:not(.dark-mode) .form-control {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #111111;
+}
+
+body:not(.dark-mode) .form-control:focus {
+  background-color: #ffffff;
+}
+
+body:not(.dark-mode) .info-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(138, 92, 246, 0.4);
+}
+
+body:not(.dark-mode) .info-item p {
+  color: #444444;
+}
+/* 1. Small Error Text */
+.error {
+  color: #ef4444;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
+/* 2. Invalid Input Red Glow */
+input.error,
+textarea.error {
+  border: 1px solid #ef4444 !important;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.25) !important;
+}
+
+/* 3. Button Disabled/Loading Style */
+.submit-btn:disabled {
+  background-color: #6d28d9;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* 4. Footer Styling */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: #888;
+  font-size: 14px;
+}
+
+.footer hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin-bottom: 20px;
+  max-width: 1100px;
+}
+/* Cart Page Styling */
+.cart-page { padding: 40px 20px; color: white; max-width: 1100px; margin: 0 auto; }
+.cart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.continue-shop { color: #a855f7; text-decoration: none; font-weight: 600; }
+
+.cart-table-header { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; padding: 15px; border-bottom: 1px solid #333; font-weight: bold; }
+.cart-item-row { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr; align-items: center; padding: 20px 0; border-bottom: 1px solid #222; }
+
+.item-info { display: flex; align-items: center; gap: 15px; }
+.item-info img { width: 60px; height: 60px; border-radius: 8px; object-fit: cover; }
+
+/* Quantity Buttons with Hover */
+.qty-controls { display: flex; align-items: center; gap: 10px; }
+.qty-btn { 
+  background: #2a2a2a; border: none; cursor: pointer; padding: 8px 12px; border-radius: 6px; 
+  transition: all 0.2s ease; 
+}
+.qty-btn:hover { background: #8b5cf6; transform: scale(1.1); }
+
+/* Remove Button */
+.remove-btn { 
+  background: transparent; border: 1px solid #ef4444; color: #ef4444; 
+  padding: 8px 12px; border-radius: 6px; cursor: pointer; transition: 0.3s; 
+}
+.remove-btn:hover { background: #ef4444; color: white; }
+
+.cart-summary { margin-top: 40px; text-align: right; background: #1e1e1e; padding: 25px; border-radius: 12px; }
+.cart-actions { display: flex; gap: 15px; justify-content: flex-end; margin-top: 20px; }
+/* Home Page Layout */
+.home-page { padding-bottom: 50px; color: white; }
+
+/* Category Cards */
+.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 40px 20px; }
+.category-card { background: #1e1e1e; padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #333; transition: 0.3s; }
+.category-card:hover { border-color: #8b5cf6; transform: translateY(-5px); }
+
+/* Features Grid */
+.features-grid { display: flex; justify-content: center; gap: 40px; padding: 40px; }
+.feature-item { text-align: center; }
+.feature-item span { font-size: 40px; display: block; margin-bottom: 10px; }
+
+/* Reviews */
+.reviews-section { background: #1a1a1a; padding: 50px 20px; text-align: center; }
+.review-card { max-width: 600px; margin: 20px auto; font-style: italic; font-size: 1.2rem; color: #ccc; }
+
+/* Newsletter */
+.newsletter-section { text-align: center; padding: 50px 20px; border-top: 1px solid #333; }
+.news-input { display: flex; justify-content: center; gap: 10px; margin-top: 20px; }
+.news-input input { padding: 12px; border-radius: 6px; border: none; width: 300px; }
+.news-input button { padding: 12px 25px; background: #8b5cf6; color: white; border: none; border-radius: 6px; cursor: pointer; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .news-input { flex-direction: column; align-items: center; }
+  .news-input input { width: 90%; }
+}
+/* Hero Split Layout */
+.hero-section { display: flex; align-items: center; justify-content: space-between; padding: 60px 10%; gap: 40px; }
+.hero-content { flex: 1; }
+.hero-image { flex: 1; }
+.hero-image img { width: 100%; border-radius: 20px; }
+
+/* Product Grid (Reuse Shop grid) */
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px 10%; }
+.card-actions { display: flex; gap: 10px; margin-top: 10px; }
+
+/* Category Cards Hover */
+.category-card { 
+  background: #1e1e1e; padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #333; 
+  transition: all 0.3s ease; 
+}
+.category-card:hover { 
+  transform: translateY(-8px); 
+  box-shadow: 0 10px 20px rgba(138, 92, 246, 0.2); 
+  border-color: #8b5cf6;
+}
+/* 8. Product Image Size */
+.product-card img {
+  height: 250px;
+  width: 100%;
+  object-fit: contain;
+  padding: 10px;
+}
+
+/* 9. Card Hover & Global Product Card Style */
+.product-card {
+  transition: 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #1e1e1e;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+/* 10. Footer Padding */
+.footer { padding: 60px 0; }
+
+/* 3. Discount Badge Styling */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #ef4444;
+  color: white;
+  padding: 4px 8px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+/* --- Hero Section Fixes --- */
+.hero-section { height: 500px; display: flex; align-items: center; justify-content: space-between; gap: 40px; padding: 0 10%; }
+.hero-image img { width: 100%; max-width: 550px; object-fit: contain; transform: scale(1.1); }
+
+/* --- Category Cards Fixes --- */
+.cat-icon { font-size: 45px; display: block; margin-bottom: 15px; }
+.cat-count { color: #888; font-size: 14px; margin-bottom: 15px; }
+.cat-link { color: #a855f7; font-weight: bold; text-decoration: none; }
+.category-card { transition: 0.3s ease; background: #1e1e1e; padding: 30px; border-radius: 12px; text-align: center; border: 1px solid #333; }
+.category-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(138, 92, 246, 0.15); border-color: #8b5cf6; }
+
+/* --- Featured Products & Card Hover Fixes --- */
+.product-card { transition: 0.3s ease; border-radius: 12px; overflow: hidden; background: #1e1e1e; position: relative; border: 1px solid #333; }
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); border-color: #8b5cf6; }
+.product-card img { height: 250px; width: 100%; object-fit: contain; background: #2a2a2a; padding: 10px; }
+.product-info { padding: 15px; }
+.full-width-btn { width: 100%; margin-top: 10px; }
+.rating { margin: 5px 0 10px 0; font-size: 14px; }
+
+/* Badges & Icons */
+.discount-badge { position: absolute; top: 12px; left: 12px; background: #ef4444; color: white; padding: 4px 10px; font-size: 12px; font-weight: bold; border-radius: 4px; z-index: 2; }
+.wishlist-btn { position: absolute; top: 12px; right: 12px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 50%; width: 35px; height: 35px; font-size: 16px; cursor: pointer; z-index: 2; transition: 0.2s; }
+.wishlist-btn:hover { background: #ef4444; transform: scale(1.1); }
+
+/* --- Why Choose Us Fixes --- */
+.feature-icon { font-size: 55px; display: block; margin-bottom: 10px; }
+.feature-item p { color: #aaa; font-size: 14px; margin-top: 8px; }
+
+/* --- Newsletter Fixes --- */
+.news-input { display: flex; gap: 10px; justify-content: center; align-items: center; margin-top: 20px; }
+.news-input input { padding: 15px 20px; width: 350px; font-size: 16px; border-radius: 8px; border: 1px solid #444; background: #2a2a2a; color: white; }
+.btn-large { padding: 15px 35px; font-size: 16px; font-weight: bold; }
+.success-toast { background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid #22c55e; padding: 15px 30px; border-radius: 8px; display: inline-block; margin-top: 20px; font-weight: bold; }
+
+/* --- Footer Spacing Fixes --- */
+.footer { padding: 60px 0; margin-top: 0; }
+
+/* --- Navbar Circular Cart Badge --- */
+.cart-badge {
+  background-color: #ffd700;
+  color: #000;
+  border-radius: 50%;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-left: 5px;
+  vertical-align: top;
+}
+
+/* Newsletter Input Fix - Theme Aware */
+.news-input input { 
+  flex: 2; 
+  padding: 15px 20px; 
+  font-size: 16px; 
+  border-radius: 8px; 
+  border: 1px solid #888; /* Border visible kar di */
+  background-color: var(--bg-color); /* Theme ke hisaab se background */
+  color: var(--text-color); /* Theme ke hisaab se text */
+  transition: 0.3s;
+}
+
+/* Dark mode mein background wapas dark kar do */
+.dark-theme .news-input input {
+  background-color: #2a2a2a;
+}
+/* ========================================= */
+/* 🌟 HERO SECTION - PERFECT MIDDLE ALIGNMENT */
+/* ========================================= */
+
+.hero-section { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; /* Dono boxes ko center me layega */
+  max-width: 1100px; /* Screen ke beech me ek max size set kiya */
+  margin: 50px auto; /* Ye poore Hero Section ko screen ke bilkul middle me fix karega */
+  padding: 0 20px;
+  gap: 60px; /* Text aur Image ke beech ki doori */
+  background: transparent; /* Ajeeb border aur box hatane ke liye */
+  border: none;
+}
+
+.hero-content { 
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start; /* Text hamesha left se start hoga */
+  max-width: 500px; /* Text box ki max-width fix ki taaki word tute na */
+}
+
+.hero-title {
+  font-size: 3rem; /* Size thoda control me rakha taaki 2-3 lines me mast dikhe */
+  line-height: 1.2;
+  margin-bottom: 20px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: #cccccc;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.hero-image { 
+  flex: 1; 
+  display: flex; 
+  justify-content: center; /* Image box ko uske area me center karega */
+}
+
+.hero-image img { 
+  width: 100%; 
+  max-width: 500px; 
+  object-fit: contain; 
+  border-radius: 16px;
+}
+
+/* Mobile Devices ke liye */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    margin: 20px auto;
+    gap: 30px;
+  }
+  .hero-content { 
+    align-items: center; 
+    text-align: center; 
+  }
+  .hero-title { font-size: 2.2rem; }
+}
+/* App.css ke end mein add karo */
+.item-category, .item-price, .item-subtotal {
+  color: inherit; /* Parent element (Cart.jsx) ka color lega */
+}
