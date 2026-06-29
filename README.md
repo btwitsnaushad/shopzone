@@ -21,6 +21,9 @@ ShopZone is a modern, responsive e-commerce web application built using **React.
 *   **Build Tool**: Vite
 *   **Deployment**: Vercel
 
+## 🔗 Live Demo
+[https://shopzone-orpin.vercel.app](https://shopzone-orpin.vercel.app)
+
 ## 💻 Getting Started
 
 ### Prerequisites
