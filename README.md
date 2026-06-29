@@ -1,16 +1,33 @@
-# React + Vite
+# ShopZone - E-commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ShopZone is a modern, responsive e-commerce web application built using **React.js**. It provides a seamless shopping experience with real-time product data, cart management, and personalized user preferences.
 
-Currently, two official plugins are available:
+## 🚀 Key Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+*   **Product Discovery**: Fetches real-time product data using the [DummyJSON API](https://dummyjson.com/).
+*   **Cart Management**: Persistent shopping cart functionality using React `Context API` and `LocalStorage`.
+*   **Wishlist System**: Users can toggle products to their wishlist for easy access.
+*   **Theme Switching**: Smooth toggle between Light and Dark modes for enhanced UX.
+*   **Responsive Design**: Fully mobile-responsive UI built with custom CSS.
+*   **Smooth Navigation**: Integrated `react-router-dom` for seamless page transitions and efficient navigation.
+*   **User Validation**: Newsletter subscription form with real-time input validation.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+*   **Frontend**: React.js, React Router
+*   **State Management**: React Context API
+*   **Styling**: CSS3 (with CSS Variables for Theming)
+*   **API**: DummyJSON
+*   **Build Tool**: Vite
+*   **Deployment**: Vercel
 
-## Expanding the ESLint configuration
+## 💻 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
+
+### Installation & Running Locally
+
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/btwitsnaushad/shopzone.git](https://github.com/btwitsnaushad/shopzone.git)
